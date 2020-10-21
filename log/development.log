@@ -1845,6 +1845,7 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 6473)
 
 
+<<<<<<< HEAD
   [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (17.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
   [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
@@ -1915,6 +1916,7 @@ Migrating to AddPasswordDigestToUsers (20201015015741)
   [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('Michael Hartl', 'mhartl@example.com', '2020-10-15 02:56:48.460047', '2020-10-15 02:56:48.460047', '$2a$12$hCIG0CdcXsfG0chqFiA9E.yRzvjPN40pmRlWw1VX0sYAwuOg1uleu')[0m
   [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mhartl@example.com' LIMIT 1[0m
+<<<<<<< HEAD
 Started GET "/signup" for 172.20.0.1 at 2020-10-17 15:14:57 +0000
 Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
   [1m[35m (4.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
@@ -2422,5 +2424,20 @@ Processing by UsersController#create as HTML
   Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 237)
   Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 165)
 Completed 200 OK in 42ms (Views: 27.4ms | ActiveRecord: 2.2ms | Allocations: 14526)
+=======
+=======
+>>>>>>> bb9cb1f5cce760fed4293eda852f4d12180fb2c8
+Started GET "/" for 172.20.0.1 at 2020-10-21 02:28:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 105.1ms | Allocations: 12547)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 247)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 171)
+Completed 200 OK in 151ms (Views: 139.4ms | ActiveRecord: 0.0ms | Allocations: 21623)
+>>>>>>> cb82ec7d4f37c3075a14804d2c6de269732a0ff2
 
 
