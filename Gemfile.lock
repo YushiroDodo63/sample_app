@@ -60,10 +60,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     autoprefixer-rails (10.0.1.0)
       execjs
-<<<<<<< HEAD
     bcrypt (3.1.16)
-=======
->>>>>>> bb9cb1f5cce760fed4293eda852f4d12180fb2c8
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
