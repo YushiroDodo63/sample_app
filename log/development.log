@@ -5724,3 +5724,894 @@ DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and wi
   [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'example-99@railstutorial.org' LIMIT 1[0m
   [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('Quentin Conroy III', 'example-99@railstutorial.org', '2020-11-17 10:36:39.732606', '2020-11-17 10:36:39.732606', '$2a$12$UDZTHy4w7MFOnFwDkJEpOeqYSCKsM156ulrEijjZoekL.xehS0jz2')[0m
   [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+  [1m[35m (2.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('3023990675252534715', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddActivationToUsers (20201117114006)
+  [1m[35m (84.1ms)[0m  [1m[35mALTER TABLE `users` ADD `activation_digest` varchar(255)[0m
+  [1m[35m (68.2ms)[0m  [1m[35mALTER TABLE `users` ADD `activated` tinyint(1) DEFAULT FALSE[0m
+  [1m[35m (66.7ms)[0m  [1m[35mALTER TABLE `users` ADD `activated_at` datetime[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20201117114006')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('3023990675252534715')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+Started GET "/" for 172.20.0.1 at 2020-11-17 12:19:29 +0000
+  [1m[35m (4.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 118.5ms | Allocations: 33494)
+  Rendered layouts/_shim.html.erb (Duration: 0.6ms | Allocations: 84)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 42.8ms | Allocations: 9164)
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 171)
+Completed 200 OK in 248ms (Views: 236.6ms | ActiveRecord: 6.0ms | Allocations: 64519)
+
+
+Started GET "/signup" for 172.20.0.1 at 2020-11-17 12:19:50 +0000
+  
+SyntaxError (/app_name/app/controllers/users_controller.rb:39: syntax error, unexpected local variable or method, expecting `end'
+      render 'edit'j
+                   ^
+):
+  
+app/controllers/users_controller.rb:39: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:39: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:39: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/signup" for 172.20.0.1 at 2020-11-17 12:20:18 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 191)
+  Rendered users/_form.html.erb (Duration: 144.2ms | Allocations: 199035)
+  Rendered users/new.html.erb within layouts/application (Duration: 145.3ms | Allocations: 199360)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.8ms | Allocations: 1022)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 49)
+Completed 200 OK in 189ms (Views: 166.8ms | ActiveRecord: 3.1ms | Allocations: 213873)
+
+
+Started POST "/users" for 172.20.0.1 at 2020-11-17 12:20:39 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"/gETy2w0PB7BgfjASEONJUSU09flL7fYAbwH3h4dLIfqoB7nq+wi4KbgKXQSM6/NgBbHrD9v8zyMKah+cNEcDg==", "user"=>{"name"=>"A", "email"=>"a@g.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'a@g.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`) VALUES ('A', 'a@g.com', '2020-11-17 12:20:39.962387', '2020-11-17 12:20:39.962387', '$2a$12$RDcOY6of/RD29Bba/TxkQuill.C9prpKWlz381ZjFeolRYTflQo/a', '$2a$12$k0ElLW2Gce2ZY4cuCy55geGxdDuxyUiLWo1nAqVV1L2/aeO1K1/aa')[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (Duration: 2.9ms | Allocations: 1035)
+UserMailer#account_activation: processed outbound mail in 7.0ms
+Completed 500 Internal Server Error in 613ms (ActiveRecord: 10.4ms | Allocations: 25370)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+     6: Welcome to the Sample App! Click on the link below to activate your account:
+     7: </p>
+     8: 
+     9: <%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+    10:                                                     email: @user.email) %>
+  
+app/views/user_mailer/account_activation.html.erb:9
+app/mailers/user_mailer.rb:10:in `account_activation'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 172.20.0.1 at 2020-11-17 12:22:05 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"/gETy2w0PB7BgfjASEONJUSU09flL7fYAbwH3h4dLIfqoB7nq+wi4KbgKXQSM6/NgBbHrD9v8zyMKah+cNEcDg==", "user"=>{"name"=>"A", "email"=>"a@g.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'a@g.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 321)
+  Rendered users/_form.html.erb (Duration: 3.9ms | Allocations: 1677)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1994)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 76)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.5ms | Allocations: 1098)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 165)
+Completed 200 OK in 309ms (Views: 27.7ms | ActiveRecord: 2.6ms | Allocations: 14395)
+
+
+Started POST "/users" for 172.20.0.1 at 2020-11-17 12:22:22 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"/5Gf8Rl5aWGjfD/BjBLYNTnrV4JQtxQnfpVsUNfyYknrMJLd3qF3n8Qd7nXWYvrd/WlD+Yr3UMPzAMPwuT5SwA==", "user"=>{"name"=>"A", "email"=>"a@gg.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'a@gg.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`) VALUES ('A', 'a@gg.com', '2020-11-17 12:22:22.540342', '2020-11-17 12:22:22.540342', '$2a$12$i4X6J1whuJpc41OidTUhsOk1eRaQMBikKV1agF.DM0ESG6VoZBj.K', '$2a$12$KiymMP6l1p5QfYt3tLajSe5n6c6eJM37W/nUZnlVhtCur2vIFT8tS')[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (Duration: 1.5ms | Allocations: 1021)
+UserMailer#account_activation: processed outbound mail in 5.2ms
+Completed 500 Internal Server Error in 533ms (ActiveRecord: 9.4ms | Allocations: 6832)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    6: Welcome to the Sample App! Click on the link below to activate your account:
+    7: </p>
+    8: 
+    9: <%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
+  
+app/views/user_mailer/account_activation.html.erb:9
+app/mailers/user_mailer.rb:10:in `account_activation'
+app/controllers/users_controller.rb:21:in `create'
+Started GET "/users" for 172.20.0.1 at 2020-11-17 12:34:06 +0000
+  [1m[35m (2.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` LIMIT 30 OFFSET 0[0m
+  ↳ app/views/users/index.html.erb:7
+  Rendered collection of users/_user.html.erb [30 times] (Duration: 14.0ms | Allocations: 2587)
+  Rendered users/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 6548)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 6)
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 197)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 49)
+Completed 200 OK in 55ms (Views: 47.5ms | ActiveRecord: 3.7ms | Allocations: 13508)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-17 12:34:09 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 715)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.4ms | Allocations: 824)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 49)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.7ms | Allocations: 7992)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-17 12:34:10 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 591)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 815)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 47)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 0.5ms | Allocations: 7251)
+
+
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+Started GET "/" for 172.20.0.1 at 2020-11-24 10:00:42 +0000
+  [1m[35m (4.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 86.2ms | Allocations: 10826)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 79)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 30.9ms | Allocations: 9173)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 171)
+Completed 200 OK in 149ms (Views: 136.9ms | ActiveRecord: 5.0ms | Allocations: 28597)
+
+
+Started GET "/account_activation" for 172.20.0.1 at 2020-11-24 10:01:11 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/account_activation"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/account_activations" for 172.20.0.1 at 2020-11-24 10:02:03 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/account_activations"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/account_activations/fFb_F94mgQtmlSvRFGsITw/edit?email=michael%40michaelhartl.com" for 172.20.0.1 at 2020-11-24 10:02:35 +0000
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"michael@michaelhartl.com", "id"=>"fFb_F94mgQtmlSvRFGsITw"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'michael@michaelhartl.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms | Allocations: 1089)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 10:02:35 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 616)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.2ms | Allocations: 831)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 47)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.8ms | Allocations: 7383)
+
+
+Started GET "/account_activations/fFb_F94mgQtmlSvRFGsITw/edit?email=michael%40michaelhartl.com" for 172.20.0.1 at 2020-11-24 10:03:46 +0000
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"michael@michaelhartl.com", "id"=>"fFb_F94mgQtmlSvRFGsITw"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'michael@michaelhartl.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms | Allocations: 893)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 10:03:46 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 592)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.2ms | Allocations: 815)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 47)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 1.0ms | Allocations: 7296)
+
+
+Started GET "/account_activations/fFb_F94mgQtmlSvRFGsITw/edit?email=michael%40michaelhartl.com" for 172.20.0.1 at 2020-11-24 10:12:40 +0000
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"michael@michaelhartl.com", "id"=>"fFb_F94mgQtmlSvRFGsITw"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'michael@michaelhartl.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms | Allocations: 2690)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 10:12:40 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 598)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 16.0ms | Allocations: 6245)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.5ms | Allocations: 12902)
+
+
+Started GET "/account_activations/" for 172.20.0.1 at 2020-11-24 10:19:52 +0000
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+ActionController::RoutingError (No route matches [GET] "/account_activations"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/account_activations/1/edit" for 172.20.0.1 at 2020-11-24 10:20:11 +0000
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms | Allocations: 1049)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 10:20:11 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 596)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.8ms | Allocations: 815)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 47)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.6ms | Allocations: 7322)
+
+
+Started GET "/account_activations/fFb_F94mgQtmlSvRFGsITw/edit?email=michael%40michaelhartl.com" for 172.20.0.1 at 2020-11-24 10:23:06 +0000
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"michael@michaelhartl.com", "id"=>"fFb_F94mgQtmlSvRFGsITw"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'michael@michaelhartl.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.1ms | Allocations: 3021)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 10:23:06 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 597)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 19.8ms | Allocations: 6287)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 49)
+Completed 200 OK in 35ms (Views: 31.2ms | ActiveRecord: 3.0ms | Allocations: 12946)
+
+
+Started GET "/account_activations/fFb_F94mgQtmlSvRFGsITw/edit?email=michael%40michaelhartl.com" for 172.20.0.1 at 2020-11-24 10:28:47 +0000
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"michael@michaelhartl.com", "id"=>"fFb_F94mgQtmlSvRFGsITw"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'michael@michaelhartl.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms | Allocations: 2635)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 10:28:47 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 602)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 14.8ms | Allocations: 6190)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.6ms | Allocations: 12868)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 10:29:00 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.2ms | Allocations: 591)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.0ms | Allocations: 815)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 47)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.7ms | Allocations: 7254)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 10:31:36 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.7ms | Allocations: 602)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 19.1ms | Allocations: 7708)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 2.1ms | Allocations: 14382)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 10:31:36 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.8ms | Allocations: 591)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 815)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 47)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.6ms | Allocations: 7246)
+
+
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('3023990675252534715', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('3023990675252534715')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+Started GET "/" for 172.20.0.1 at 2020-11-24 12:13:12 +0000
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 30.1ms | Allocations: 10826)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 79)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 30.5ms | Allocations: 9186)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 171)
+Completed 200 OK in 89ms (Views: 78.2ms | ActiveRecord: 3.9ms | Allocations: 28612)
+
+
+Started GET "/account_activations/1/edit" for 172.20.0.1 at 2020-11-24 12:13:23 +0000
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms | Allocations: 1068)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 12:13:23 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.7ms | Allocations: 593)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.5ms | Allocations: 824)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 47)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.6ms | Allocations: 7314)
+
+
+Started GET "/account_activations/fFb_F94mgQtmlSvRFGsITw/edit?email=michael%40michaelhartl.com" for 172.20.0.1 at 2020-11-24 12:24:43 +0000
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"michael@michaelhartl.com", "id"=>"fFb_F94mgQtmlSvRFGsITw"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'michael@michaelhartl.com' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms | Allocations: 1033)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 12:24:43 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 597)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 5.3ms | Allocations: 815)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 47)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.7ms | Allocations: 7328)
+
+
+Started GET "/users/101" for 172.20.0.1 at 2020-11-24 12:29:36 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 101 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 177)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 838)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 49)
+Completed 200 OK in 33ms (Views: 25.9ms | ActiveRecord: 1.6ms | Allocations: 8365)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 12:49:08 +0000
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 601)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 16.2ms | Allocations: 7915)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.8ms | Allocations: 14575)
+
+
+Started GET "/users/1/edit" for 172.20.0.1 at 2020-11-24 12:50:11 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:30:in `edit'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 191)
+  Rendered users/_form.html.erb (Duration: 179.0ms | Allocations: 198613)
+  Rendered users/edit.html.erb within layouts/application (Duration: 180.9ms | Allocations: 198993)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 202ms (Views: 191.2ms | ActiveRecord: 1.7ms | Allocations: 206877)
+
+
+Started GET "/account_activations/1/edit" for 172.20.0.1 at 2020-11-24 12:50:23 +0000
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms | Allocations: 1060)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 12:50:23 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 601)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 824)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 49)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.5ms | Allocations: 7321)
+
+
+Started GET "/account_activations/1/ed" for 172.20.0.1 at 2020-11-24 12:50:35 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/account_activations/1/ed"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/login" for 172.20.0.1 at 2020-11-24 12:51:01 +0000
+  
+SyntaxError (/app_name/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: pa...
+    ^
+/app_name/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(pa...
+       ^
+/app_name/app/controllers/sessions_controller.rb:18: else without rescue is useless
+    else
+    ^~~~
+/app_name/app/controllers/sessions_controller.rb:28: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:18: else without rescue is useless
+app/controllers/sessions_controller.rb:28: syntax error, unexpected `end', expecting end-of-input
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:18: else without rescue is useless
+app/controllers/sessions_controller.rb:28: syntax error, unexpected `end', expecting end-of-input
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:18: else without rescue is useless
+app/controllers/sessions_controller.rb:28: syntax error, unexpected `end', expecting end-of-input
+Started GET "/login" for 172.20.0.1 at 2020-11-24 12:53:29 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1245)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 6)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 19.8ms | Allocations: 7903)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 49)
+Completed 200 OK in 41ms (Views: 36.9ms | ActiveRecord: 2.5ms | Allocations: 15755)
+
+
+Started POST "/login" for 172.20.0.1 at 2020-11-24 12:53:39 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"AHAMFnM3LdlNTvTVhPK6LqYvSNcq992l8hQKD90V/ZYPSbLqwKoJgMgvDSJ5bi0l3yVVegJFX0sxMB9KXNLELw==", "session"=>{"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'example@railstutorial.org' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 539)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 47)
+Completed 200 OK in 250ms (Views: 13.6ms | ActiveRecord: 1.1ms | Allocations: 8190)
+
+
+Started POST "/login" for 172.20.0.1 at 2020-11-24 12:53:45 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"1ks0HHbelnRScj7zDvFxtMgW4yZuDNID6xKvMpAUXabZcorgxUOyLdcTxwTzbea/sRz+i0a+UO0oNrp3EdNkHw==", "session"=>{"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'example@railstutorial.org' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 539)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 813)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 47)
+Completed 200 OK in 252ms (Views: 13.5ms | ActiveRecord: 1.5ms | Allocations: 8039)
+
+
+Started GET "/signup" for 172.20.0.1 at 2020-11-24 12:53:53 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/_form.html.erb (Duration: 1.9ms | Allocations: 951)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1135)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 12.8ms | Allocations: 823)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 49)
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.6ms | Allocations: 8320)
+
+
+Started POST "/users" for 172.20.0.1 at 2020-11-24 12:54:15 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"6uFkW4MOmTmKQflt9nCkTRzmEXZ1i1qr4lP9RKAl3LT+QGl3RNaHx+0gKNmsAIal2GQFDa/LHk9vxlLkzunsPQ==", "user"=>{"name"=>"a", "email"=>"aaa@ggg.come", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaa@ggg.come' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`) VALUES ('a', 'aaa@ggg.come', '2020-11-24 12:54:15.267206', '2020-11-24 12:54:15.267206', '$2a$12$BB4bpJFsDWmCGP.yGy8R5eGPsfIw9YwoDPcT2CvlWaUwbQsn95S1C', '$2a$12$pCbX9sjoror8bpr3bdVEkeCco.vTeXm3E5LdOUMdpxd7a/s7DIwNi')[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 496ms (ActiveRecord: 6.4ms | Allocations: 6762)
+
+
+  
+NameError (uninitialized constant UsersController::UserMailer
+Did you mean?  UserMailerPreview):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 172.20.0.1 at 2020-11-24 12:55:14 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"6uFkW4MOmTmKQflt9nCkTRzmEXZ1i1qr4lP9RKAl3LT+QGl3RNaHx+0gKNmsAIal2GQFDa/LHk9vxlLkzunsPQ==", "user"=>{"name"=>"a", "email"=>"aaa@ggg.come", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaa@ggg.come' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 152)
+  Rendered users/_form.html.erb (Duration: 2.9ms | Allocations: 1112)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1178)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 8.4ms | Allocations: 966)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 49)
+Completed 200 OK in 311ms (Views: 21.7ms | ActiveRecord: 4.7ms | Allocations: 18989)
+
+
+Started POST "/users" for 172.20.0.1 at 2020-11-24 12:55:27 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"bXybhFoHs7JNr+tMhKsLvL15Plf2rDj+B7cLZKpCJBZ53Zaond+tTCrOOvje2ylUefsqLCzsfBqKIqTExI4Unw==", "user"=>{"name"=>"a", "email"=>"aaa@ggg.comea", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaa@ggg.comea' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`, `activation_digest`) VALUES ('a', 'aaa@ggg.comea', '2020-11-24 12:55:27.920538', '2020-11-24 12:55:27.920538', '$2a$12$k03lAXWXW3kC/NZTFlIa1ukBy602f1EdRnkVJ/yyIGhj9juIF2KaC', '$2a$12$DPDWEO5z/oL5GWtbfv6O6O2qb73WygW0WLC668MW9CHYuL9JpdWk2')[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 483ms (ActiveRecord: 8.2ms | Allocations: 4143)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 12:55:28 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 600)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.2ms | Allocations: 824)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 49)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.6ms | Allocations: 7489)
+
+
+Started GET "/users/1/edit" for 172.20.0.1 at 2020-11-24 12:55:38 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:28:in `edit'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/_form.html.erb (Duration: 2.7ms | Allocations: 977)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1078)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 47)
+Completed 200 OK in 25ms (Views: 15.3ms | ActiveRecord: 1.5ms | Allocations: 8545)
+
+
+Started GET "/account_activations/1/edit" for 172.20.0.1 at 2020-11-24 12:55:48 +0000
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms | Allocations: 1029)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 12:55:48 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 591)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 815)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 47)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.5ms | Allocations: 7305)
+
+
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` LIMIT 11[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+Started GET "/account_activations/104/edit" for 172.20.0.1 at 2020-11-24 12:59:23 +0000
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms | Allocations: 1042)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 12:59:23 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 591)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 815)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 47)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.6ms | Allocations: 7284)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+Started GET "/account_activations/$2a$12$DPDWEO5z/oL5GWtbfv6O6O2qb73WygW0WLC668MW9CHYuL9JpdWk2/edit?email=aaa%40ggg.comea" for 172.20.0.1 at 2020-11-24 13:12:07 +0000
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+ActionController::RoutingError (No route matches [GET] "/account_activations/$2a$12$DPDWEO5z/oL5GWtbfv6O6O2qb73WygW0WLC668MW9CHYuL9JpdWk2/edit"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/account_activations/104/edit?email=aaa%40ggg.comea" for 172.20.0.1 at 2020-11-24 13:12:56 +0000
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"aaa@ggg.comea", "id"=>"104"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'aaa@ggg.comea' LIMIT 1[0m
+  ↳ app/controllers/account_activations_controller.rb:4:in `edit'
+Redirected to http://localhost:3000/
+Completed 302 Found in 237ms (ActiveRecord: 1.0ms | Allocations: 1068)
+
+
+Started GET "/" for 172.20.0.1 at 2020-11-24 13:12:57 +0000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 596)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 815)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 47)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.6ms | Allocations: 7334)
+
+
