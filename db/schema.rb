@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_01_05_074530) do
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
+ActiveRecord::Schema.define(version: 2020_11_17_114006) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -30,6 +31,9 @@ ActiveRecord::Schema.define(version: 2021_01_05_074530) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin", default: false
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
