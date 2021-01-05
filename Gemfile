@@ -8,6 +8,8 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'faker'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 # Use mysql as the database for Active Record
@@ -57,3 +59,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :production do
+  gem 'pg',  '0.20.0'
+  gem 'fog', '1.42'
+end
