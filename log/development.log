@@ -11881,3 +11881,125 @@ Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.6ms | Allocations: 733
 >>>>>>> master
 
 
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /app_name/config/environment.rb:5)
+Started GET "/" for 172.18.0.1 at 2021-01-05 13:24:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 172.20.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.2) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.2) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/rails/actions" for 172.18.0.1 at 2021-01-05 13:24:51 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 172.20.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('3023990675252534715', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddActivationToUsers (20201117114006)
+  [1m[35m (82.6ms)[0m  [1m[35mALTER TABLE `users` ADD `activation_digest` varchar(255)[0m
+  [1m[35m (65.9ms)[0m  [1m[35mALTER TABLE `users` ADD `activated` tinyint(1) DEFAULT FALSE[0m
+  [1m[35m (80.5ms)[0m  [1m[35mALTER TABLE `users` ADD `activated_at` datetime[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20201117114006')[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('3023990675252534715')[0m
+Started GET "/" for 172.18.0.1 at 2021-01-05 13:24:51 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 172.20.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1394)
+
+
+  
+SyntaxError (/app_name/app/models/user.rb:43: syntax error, unexpected <<, expecting `end'
+<<<<<<< HEAD
+^~
+/app_name/app/models/user.rb:47: syntax error, unexpected ===, expecting `end'
+=======
+^~~
+/app_name/app/models/user.rb:63: syntax error, unexpected >>, expecting `end'
+>>>>>>> master
+^~
+):
+  
+app/models/user.rb:43: syntax error, unexpected <<, expecting `end'
+app/models/user.rb:47: syntax error, unexpected ===, expecting `end'
+app/models/user.rb:63: syntax error, unexpected >>, expecting `end'
+app/models/user.rb:43: syntax error, unexpected <<, expecting `end'
+app/models/user.rb:47: syntax error, unexpected ===, expecting `end'
+app/models/user.rb:63: syntax error, unexpected >>, expecting `end'
+app/models/user.rb:43: syntax error, unexpected <<, expecting `end'
+app/models/user.rb:47: syntax error, unexpected ===, expecting `end'
+app/models/user.rb:63: syntax error, unexpected >>, expecting `end'
+app/helpers/sessions_helper.rb:19:in `current_user'
+app/helpers/sessions_helper.rb:30:in `logged_in?'
+app/controllers/static_pages_controller.rb:3:in `home'
+Started GET "/" for 172.18.0.1 at 2021-01-05 13:25:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 172.20.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 101 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:19:in `current_user'
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `microposts` WHERE `microposts`.`user_id` = 101[0m
+  ↳ app/views/shared/_user_info.html.erb:4
+  Rendered shared/_user_info.html.erb (Duration: 4.8ms | Allocations: 1164)
+  Rendered shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 190)
+  Rendered shared/_micropost_form.html.erb (Duration: 3.1ms | Allocations: 1223)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `microposts` WHERE (user_id = 101)[0m
+  ↳ app/views/shared/_feed.html.erb:1
+  [1m[36mMicropost Load (0.7ms)[0m  [1m[34mSELECT `microposts`.* FROM `microposts` WHERE (user_id = 101) ORDER BY `microposts`.`created_at` DESC LIMIT 30 OFFSET 0[0m
+  ↳ app/views/shared/_feed.html.erb:3
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 101 LIMIT 1[0m
+  ↳ app/views/microposts/_micropost.html.erb:2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 101 LIMIT 1[0m
+  ↳ app/views/microposts/_micropost.html.erb:2
+  Rendered collection of microposts/_micropost.html.erb [2 times] (Duration: 123.9ms | Allocations: 198995)
+  Rendered shared/_feed.html.erb (Duration: 130.5ms | Allocations: 200898)
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 140.9ms | Allocations: 204126)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 78)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 494)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 171)
+Completed 200 OK in 286ms (Views: 248.9ms | ActiveRecord: 6.7ms | Allocations: 279326)
+
+
